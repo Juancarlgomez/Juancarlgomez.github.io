@@ -1,0 +1,385 @@
+body {
+   margin: 0;
+   padding: 0;
+   font-family: "basic-sans", Arial, Helvetica;
+   font-size: 20px;
+   font-weight: 600;
+   font-style: normal;
+   color: #ffffff;
+   line-height: 1.5em;
+}
+
+#site_wrap {
+   background-color: #000000;
+   height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
+   display: grid;
+   grid-template-columns:
+      1fr repeat(4, minmax(0, 264.75px)) 1fr;
+   grid-gap: 0px;
+   grid-template-rows:
+      117px 100px auto 1fr;
+
+   grid-template-areas:
+      ". header header header logo ."
+      ". . featured_header featured_header . ."
+      ". featured_main featured_profile featured_profile featured_profile ."
+      " footer footer footer footer footer footer"
+   ;
+}
+
+input[type=checkbox] {
+   visibility: hidden;
+}
+
+.header {
+   grid-area: header;
+   margin: 0px 0px 20px 0px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.nav {
+   list-style: none;
+   padding-top: 3em;
+   padding-left: 0;
+   align-items: center;
+   display: flex;
+}
+
+a {
+   text-decoration: none;
+   margin: 0px 138px 0px 0px;
+   font-size: 24px;
+   font-weight: bold;
+
+}
+
+a:visited {
+   color: inherit;
+}
+
+a:hover {
+   color: #0592FF;
+   text-decoration: underline;
+}
+
+a.active {
+   color: #0592FF;
+   text-decoration: underline;
+}
+
+.logo {
+   display: inline-flex;
+   grid-area: logo;
+   align-items: center;
+   justify-content: center;
+   padding-top: 10px;
+}
+
+.featured_header {
+   color: #747474;
+   grid-area: featured_header;
+   margin: 20px 0px 20px 0px;
+   font-size: 48px;
+   font-weight: 700;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.featured_main {
+   grid-area: featured_main;
+   margin-right: 10px;
+   font-size: 32px;
+   font-weight: 700;
+   display: flex;
+   padding: 100px 0px 0px 10px;
+   justify-content: center;
+   line-height: 1.25;
+}
+
+.featured_profile {
+   grid-area: featured_profile;
+   display: flex;
+   justify-content: center;
+}
+
+/* Featured_Profile Object, (Safari doesn't load my svg without this) 
+   */
+.featured_profile object {
+   height: 100%;
+   width: 100%;
+}
+
+.footer {
+   grid-area: footer;
+   flex-direction: column;
+   color: #747474;
+   text-align: center;
+   padding-top: 2em;
+}
+
+/* FOOTER, (changes the size of the anchor to 12px) */
+.footer a {
+   font-size: 12px;
+}
+
+/* Site Wrap for ABOUT page, (removes the featured_main, adds the image) */
+.about #site_wrap {
+   background-color: #000000;
+   height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
+   display: grid;
+   grid-template-columns:
+      1fr repeat(4, minmax(0, 264.75px)) 1fr;
+   grid-gap: 0px;
+   grid-template-rows:
+      117px 100px 447px 1fr;
+
+   grid-template-areas:
+      ". header featured_main featured_main logo ."
+      ". . featured_header featured_header . ."
+      " . image featured_profile featured_profile featured_profile ."
+      " footer footer footer footer footer footer"
+   ;
+}
+
+/* ABOUT Page, (hides the featured main while on full screen mode) */
+.about .featured_main {
+   visibility: hidden;
+}
+
+/* ABOUT Page, (adds the grid area, flex, and justifies the image to the center) */
+.about .image {
+   grid-area: image;
+   display: flex;
+   justify-content: center;
+
+}
+
+/* ABOUT Page, (image size) */
+img {
+   width: 236px;
+   height: 314.12px;
+}
+
+/* ABOUT Page, changes the margin to fit the image better */
+.about .featured_profile {
+   margin: 0 20px 0 20px;
+}
+
+/* MOBILE SITE WRAP for ABOUT, adds the image to the gid template */
+@media screen and (max-width:880px) {
+   .about #site_wrap {
+
+      grid-template-rows:
+         120px 150px 360px auto 1fr;
+
+      grid-template-areas:
+         "header featured_main featured_main featured_main  featured_main logo"
+         "featured_header featured_header featured_header featured_header featured_header featured_header"
+         ". image image image image . "
+         "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
+         " footer footer footer footer footer footer"
+      ;
+   }
+}
+
+/* SKILLS Page, (Bullets were placed to the side, this drops then into columns) */
+.skills .featured_profile {
+   flex-direction: column;
+   justify-content: start;
+}
+
+/* CONTACT Page, (Justifies the content to the start of the flex-box) */
+.contact .featured_profile {
+   justify-content: start;
+}
+
+/* HOBBIES Page, (Changes the bullet style to none) */
+.hobbies .featured_profile ul {
+   list-style: none;
+}
+
+/* MOBILE Site Wrap for ALL webpages */
+@media screen and (max-width:880px) {
+   #site_wrap {
+
+      grid-template-rows:
+         120px 150px 60px auto 1fr;
+
+      grid-template-areas:
+         "header featured_main featured_main featured_main  featured_main logo"
+         "featured_header featured_header featured_header featured_header featured_header featured_header"
+         ". . . . . . "
+         "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
+         " footer footer footer footer footer footer"
+      ;
+   }
+
+   /* this makes the hamburger menu visible 
+      */
+   input[type=checkbox] {
+      visibility: visible;
+   }
+
+   .header {
+      /* added for hamburger menu 
+      */
+      display: flex;
+      justify-content: space-between;
+      align-items: left;
+      margin-left: 30px;
+      margin-right: 0;
+      top: 50px;
+      left: 50px;
+      z-index: 1;
+      user-select: none;
+   }
+
+   a {
+      display: inline-block;
+      margin: 0 5px;
+      font-size: 20px;
+      /* added for hamburger menu */
+      text-decoration: none;
+      color: #ffffff;
+      transition: color 0.3s ease;
+   }
+
+   /* code I used for hamburger menu can be found here https://codepen.io/erikterwan/pen/EVzeRP  */
+
+   .header input {
+      display: flex;
+      width: 42px;
+      height: 32px;
+      position: relative;
+      top: 30px;
+      left: -8px;
+
+      cursor: pointer;
+
+      /* hide this */
+      opacity: 0;
+      /* and place it over the hamburger */
+      z-index: 2;
+   }
+
+   .header span {
+      display: flex;
+      flex-direction: column;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+
+      background: #ffffff;
+      border-radius: 3px;
+
+      z-index: 1;
+
+      transform-origin: 4px 0px;
+
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+         background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+   }
+
+   .header span:first-child {
+      transform-origin: 0% 0%;
+   }
+
+   .header span:nth-last-child(2) {
+      transform-origin: 0% 100%;
+   }
+
+
+   /* 
+      Transform all the slices of hamburger
+      into a cross mark.
+    */
+   .header input:checked~span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background: #232323;
+   }
+
+   /*
+     But let's hide the middle one.
+    */
+   .header input:checked~span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+   }
+
+   /*
+      The last one should go the other direction
+    */
+   .header input:checked~span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(0, -1px);
+   }
+
+   /*
+      Make this absolute positioned
+      at the top left of the screen
+    */
+   .nav {
+      flex-direction: column;
+      position: absolute;
+      width: 200px;
+      margin: -100px 0 0 -50px;
+      padding: 50px;
+      padding-top: 125px;
+
+      background: #000000;
+      list-style: none;
+
+
+      transform-origin: 0% 0%;
+      transform: translate(-100%, 0);
+
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+   }
+
+   .nav li {
+      padding: 30px 0;
+      font-size: 22px;
+   }
+
+   /*
+      And let's slide it in from the left
+    */
+   .header input:checked~ul {
+      transform: none;
+   }
+
+   .featured_header {
+      margin: 20px 0 0 0;
+
+   }
+
+   .logo {
+      padding: 0 30px 20px 0;
+   }
+
+   .featured_main {
+      margin-right: 0;
+      font-size: 24px;
+      padding: 15px 0 0 0;
+      align-items: center;
+   }
+
+   .about .featured_main {
+      visibility: visible;
+   }
+
+   .featured_profile {
+      margin: 0;
+      padding: 0px 15px 0px 15px;
+      align-items: center;
+   }
+
+}
