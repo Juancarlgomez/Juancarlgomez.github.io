@@ -49,7 +49,7 @@ input[type=checkbox] {
    display: flex;
 }
 
-a {
+.header a {
    text-decoration: none;
    margin: 0px 138px 0px 0px;
    font-size: 24px;
@@ -241,13 +241,11 @@ img {
       user-select: none;
    }
 
-   a {
+   .header a {
       display: inline-block;
       margin: 0 5px;
       font-size: 20px;
       /* added for hamburger menu */
-      text-decoration: none;
-      color: #ffffff;
       transition: color 0.3s ease;
    }
 
