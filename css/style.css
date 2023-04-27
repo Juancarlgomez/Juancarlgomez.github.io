@@ -199,6 +199,49 @@ img {
    list-style: none;
 }
 
+.hobbies .nintendo {
+   grid-area: nintendo;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.hobbies #site_wrap {
+   background-color: #000000;
+   height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
+   display: grid;
+   grid-template-columns:
+      1fr repeat(4, minmax(0, 264.75px)) 1fr;
+   grid-gap: 0px;
+   grid-template-rows:
+      117px 100px auto 1fr;
+
+   grid-template-areas:
+      ". header featured_main featured_main logo ."
+      ". . featured_header featured_header . ."
+      ". nintendo featured_profile featured_profile featured_profile ."
+      " footer footer footer footer footer footer"
+   ;
+}
+
+@media screen and (max-width:880px) {
+   .hobbies #site_wrap {
+
+      grid-template-rows:
+         120px 150px 200px auto 1fr;
+
+      grid-template-areas:
+         "header featured_main featured_main featured_main  featured_main logo"
+         "featured_header featured_header featured_header featured_header featured_header featured_header"
+         ". . nintendo nintendo . . "
+         "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
+         " footer footer footer footer footer footer"
+      ;
+   }
+}
+
 /* index page */
 .index #site_wrap {
    background-color: #000000;
