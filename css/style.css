@@ -156,14 +156,17 @@ a.active {
    grid-area: image;
    display: flex;
    justify-content: center;
-   flex-direction: column;
+   flex-direction: column; 
+   position: center;
 
 }
 
-/* ABOUT Page, (image size) */
+/* ABOUT Page, (image size and centers img) */
 img {
    width: 236px;
    height: 314.12px;
+   margin-left: auto;
+   margin-right: auto;
 }
 
 /* ABOUT Page, (changes the margin to fit the image better) */
