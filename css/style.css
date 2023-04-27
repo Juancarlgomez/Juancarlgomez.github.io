@@ -29,42 +29,6 @@ body {
    ;
 }
 
-.index #site_wrap {
-   background-color: #000000;
-   height: 100vh;
-   width: 100vw;
-   overflow-x: hidden;
-   display: grid;
-   grid-template-columns:
-      1fr repeat(4, minmax(0, 264.75px)) 1fr;
-   grid-gap: 0px;
-   grid-template-rows:
-      117px 100px auto 1fr;
-
-   grid-template-areas:
-      ". header header header logo ."
-      ". . featured_header featured_header . ."
-      ". featured_main featured_profile featured_profile featured_profile ."
-      " footer footer footer footer footer footer"
-   ;
-}
-
-@media screen and (max-width:880px) {
-   .index #site_wrap {
-
-      grid-template-rows:
-         120px 150px 60px auto 1fr;
-
-      grid-template-areas:
-         "header featured_main featured_main featured_main  featured_main logo"
-         "featured_header featured_header featured_header featured_header featured_header featured_header"
-         ". . . . . . "
-         "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
-         " footer footer footer footer footer footer"
-      ;
-   }
-}
-
 input[type=checkbox] {
    visibility: hidden;
 }
@@ -135,6 +99,8 @@ a.active {
    padding: 100px 0px 0px 10px;
    justify-content: center;
    line-height: 1.25;
+   /* hides the featured main while on full screen mode */
+   visibility: hidden;
 }
 
 .featured_profile {
@@ -143,8 +109,7 @@ a.active {
    justify-content: center;
 }
 
-/* Featured_Profile Object, (Safari doesn't load my svg without this) 
-   */
+/* Featured_Profile Object, (Safari doesn't load my svg without this) */
 .featured_profile object {
    height: 100%;
    width: 100%;
@@ -162,6 +127,8 @@ a.active {
 .footer a {
    font-size: 12px;
 }
+
+/* any changes to a particular web page should go bellow this comment */
 
 /* Site Wrap for ABOUT page, (removes the featured_main, adds the image) */
 .about #site_wrap {
@@ -184,15 +151,6 @@ a.active {
    ;
 }
 
-/* hides the featured main while on full screen mode */
-.featured_main {
-   visibility: hidden;
-}
-
-.index .featured_main {
-   visibility: visible;
-}
-
 /* ABOUT Page, (adds the grid area, flex, and justifies the image to the center) */
 .about .image {
    grid-area: image;
@@ -208,12 +166,12 @@ img {
    height: 314.12px;
 }
 
-/* ABOUT Page, changes the margin to fit the image better */
+/* ABOUT Page, (changes the margin to fit the image better) */
 .about .featured_profile {
    margin: 0 20px 0 20px;
 }
 
-/* MOBILE SITE WRAP for ABOUT, adds the image to the gid template */
+/* ABOUT mobile, adds the image to the gid template */
 @media screen and (max-width:880px) {
    .about #site_wrap {
 
@@ -230,18 +188,72 @@ img {
    }
 }
 
-/* SKILLS Page, (Bullets were placed to the side, this drops then into columns) */
+/* CONTACT Page, (Justifies the content to the start of the flex-box) */
+.contact .featured_profile {
+   justify-content: start;
+}
+
+/* HOBBIES Page, (Changes the bullet style to none) */
+.hobbies .featured_profile ul {
+   list-style: none;
+}
+
+/* index page */
+.index #site_wrap {
+   background-color: #000000;
+   height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
+   display: grid;
+   grid-template-columns:
+      1fr repeat(4, minmax(0, 264.75px)) 1fr;
+   grid-gap: 0px;
+   grid-template-rows:
+      117px 100px auto 1fr;
+
+   grid-template-areas:
+      ". header header header logo ."
+      ". . featured_header featured_header . ."
+      ". featured_main featured_profile featured_profile featured_profile ."
+      " footer footer footer footer footer footer"
+   ;
+}
+
+/* index page mobile */
+@media screen and (max-width:880px) {
+   .index #site_wrap {
+
+      grid-template-rows:
+         120px 150px 60px auto 1fr;
+
+      grid-template-areas:
+         "header featured_main featured_main featured_main  featured_main logo"
+         "featured_header featured_header featured_header featured_header featured_header featured_header"
+         ". . . . . . "
+         "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
+         " footer footer footer footer footer footer"
+      ;
+   }
+}
+
+/* index page (featured main remains visible) */
+.index .featured_main {
+   visibility: visible;
+}
+
+/* SKILLS Page, (changes flex direction and justifies to the start) */
 .skills .featured_profile {
    flex-direction: column;
    justify-content: start;
 }
-
+/* skill page, (adds graphic_art to the gird, display, and justifies to the center) */
 .skills .graphic_art {
    grid-area: graphic_art;
    display: flex;
    justify-content: center;
 }
 
+/* address the issue of graphic_art overflowing into the featured_main */
 .skills #site_wrap {
    background-color: #000000;
    height: 100vh;
@@ -262,6 +274,7 @@ img {
    ;
 }
 
+/* bring the graphic_art the to top */
 @media screen and (max-width:880px) {
    .skills #site_wrap {
 
@@ -278,22 +291,7 @@ img {
    }
 }
 
-/* CONTACT Page, (Justifies the content to the start of the flex-box) */
-.contact .featured_profile {
-   justify-content: start;
-}
-
-/* HOBBIES Page, (Changes the bullet style to none) */
-.hobbies .featured_profile ul {
-   list-style: none;
-}
-
 /* MOBILE Site Wrap for ALL webpages */
-
-
-
-
-
 @media screen and (max-width:880px) {
    #site_wrap {
 
