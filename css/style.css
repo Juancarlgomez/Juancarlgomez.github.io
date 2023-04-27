@@ -71,6 +71,10 @@ a.active {
    text-decoration: underline;
 }
 
+p a:link {
+   color: #ffffff;
+}
+
 .logo {
    display: inline-flex;
    grid-area: logo;
