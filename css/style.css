@@ -168,6 +168,7 @@ img {
 
 /* ABOUT Page, (changes the margin to fit the image better) */
 .about .featured_profile {
+   justify-content: center;
    margin: 0 20px 0 20px;
 }
 
@@ -181,7 +182,7 @@ img {
       grid-template-areas:
          "header featured_main featured_main featured_main  featured_main logo"
          "featured_header featured_header featured_header featured_header featured_header featured_header"
-         ". image image image image . "
+         ". . image image . . "
          "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
          " footer footer footer footer footer footer"
       ;
