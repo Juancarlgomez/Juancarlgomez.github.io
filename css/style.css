@@ -29,6 +29,42 @@ body {
    ;
 }
 
+.index #site_wrap {
+   background-color: #000000;
+   height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
+   display: grid;
+   grid-template-columns:
+      1fr repeat(4, minmax(0, 264.75px)) 1fr;
+   grid-gap: 0px;
+   grid-template-rows:
+      117px 100px auto 1fr;
+
+   grid-template-areas:
+      ". header header header logo ."
+      ". . featured_header featured_header . ."
+      ". featured_main featured_profile featured_profile featured_profile ."
+      " footer footer footer footer footer footer"
+   ;
+}
+
+@media screen and (max-width:880px) {
+   .index #site_wrap {
+
+      grid-template-rows:
+         120px 150px 60px auto 1fr;
+
+      grid-template-areas:
+         "header featured_main featured_main featured_main  featured_main logo"
+         "featured_header featured_header featured_header featured_header featured_header featured_header"
+         ". . . . . . "
+         "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
+         " footer footer footer footer footer footer"
+      ;
+   }
+}
+
 input[type=checkbox] {
    visibility: hidden;
 }
@@ -148,9 +184,13 @@ a.active {
    ;
 }
 
-/* ABOUT Page, (hides the featured main while on full screen mode) */
-.about .featured_main {
+/* hides the featured main while on full screen mode */
+.featured_main {
    visibility: hidden;
+}
+
+.index .featured_main {
+   visibility: visible;
 }
 
 /* ABOUT Page, (adds the grid area, flex, and justifies the image to the center) */
@@ -196,6 +236,48 @@ img {
    justify-content: start;
 }
 
+.skills .graphic_art {
+   grid-area: graphic_art;
+   display: flex;
+   justify-content: center;
+}
+
+.skills #site_wrap {
+   background-color: #000000;
+   height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
+   display: grid;
+   grid-template-columns:
+      1fr repeat(4, minmax(0, 264.75px)) 1fr;
+   grid-gap: 0px;
+   grid-template-rows:
+      117px 100px auto 1fr;
+
+   grid-template-areas:
+      ". header featured_main featured_main logo ."
+      ". . featured_header featured_header . ."
+      " . graphic_art featured_profile featured_profile featured_profile ."
+      " footer footer footer footer footer footer"
+   ;
+}
+
+@media screen and (max-width:880px) {
+   .skills #site_wrap {
+
+      grid-template-rows:
+         120px 150px 200px auto 1fr;
+
+      grid-template-areas:
+         "header featured_main featured_main featured_main  featured_main logo"
+         "featured_header featured_header featured_header featured_header featured_header featured_header"
+         ". . graphic_art graphic_art . . "
+         "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
+         " footer footer footer footer footer footer"
+      ;
+   }
+}
+
 /* CONTACT Page, (Justifies the content to the start of the flex-box) */
 .contact .featured_profile {
    justify-content: start;
@@ -207,6 +289,11 @@ img {
 }
 
 /* MOBILE Site Wrap for ALL webpages */
+
+
+
+
+
 @media screen and (max-width:880px) {
    #site_wrap {
 
@@ -371,7 +458,7 @@ img {
       align-items: center;
    }
 
-   .about .featured_main {
+   .featured_main {
       visibility: visible;
    }
 
