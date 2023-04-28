@@ -161,22 +161,20 @@ p a:link {
    display: flex;
    justify-content: center;
    flex-direction: column; 
-   position: center;
-
+   text-align: center;
 }
 
 /* ABOUT Page, (image size and centers img) */
 img {
    width: 236px;
-   height: 314.12px;
-   margin-left: auto;
-   margin-right: auto;
+   height: 314px;
+   margin: 10px;
 }
 
 /* ABOUT Page, (changes the margin to fit the image better) */
 .about .featured_profile {
    justify-content: center;
-   margin: 0 20px 0 20px;
+   margin: 10px;
 }
 
 /* ABOUT mobile, adds the image to the gid template */
@@ -189,17 +187,60 @@ img {
       grid-template-areas:
          "header featured_main featured_main featured_main  featured_main logo"
          "featured_header featured_header featured_header featured_header featured_header featured_header"
-         ". . image image . . "
+         ". image image image image . "
          "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
          " footer footer footer footer footer footer"
       ;
    }
 }
 
+.contact .github {
+   grid-area: github;
+   display: flex;
+   flex-direction: column;
+}
+
 /* CONTACT Page, (Justifies the content to the start of the flex-box) */
 .contact .featured_profile {
    justify-content: start;
 }
+
+.contact #site_wrap {
+   background-color: #000000;
+   height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
+   display: grid;
+   grid-template-columns:
+      1fr repeat(4, minmax(0, 264.75px)) 1fr;
+   grid-gap: 0px;
+   grid-template-rows:
+      117px 100px auto 1fr;
+
+   grid-template-areas:
+      ". header featured_main featured_main logo ."
+      ". . featured_header featured_header . ."
+      ". github featured_profile featured_profile featured_profile ."
+      " footer footer footer footer footer footer"
+   ;
+}
+
+@media screen and (max-width:880px) {
+   .contact #site_wrap {
+
+      grid-template-rows:
+         120px 150px 200px auto 1fr;
+
+      grid-template-areas:
+         "header featured_main featured_main featured_main  featured_main logo"
+         "featured_header featured_header featured_header featured_header featured_header featured_header"
+         ". . github github . . "
+         "featured_profile featured_profile featured_profile featured_profile featured_profile featured_profile"
+         " footer footer footer footer footer footer"
+      ;
+   }
+}
+
 
 /* HOBBIES Page, (Changes the bullet style to none) */
 .hobbies .featured_profile ul {
