@@ -17,16 +17,10 @@ body {
    display: grid;
    grid-template-columns:
       1fr repeat(4, minmax(0, 264.75px)) 1fr;
-   grid-gap: 0px;
+   gap: 0px;
    grid-template-rows:
-      117px 100px auto 1fr;
+      117px 100px 447px 1fr;
 
-   grid-template-areas:
-      ". header header header logo ."
-      ". . featured_header featured_header . ."
-      ". featured_main featured_profile featured_profile featured_profile ."
-      " footer footer footer footer footer footer"
-   ;
 }
 
 input[type=checkbox] {
@@ -76,7 +70,7 @@ p a:link {
 }
 
 .logo {
-   display: inline-flex;
+   display: flex;
    grid-area: logo;
    align-items: center;
    justify-content: center;
@@ -136,16 +130,6 @@ p a:link {
 
 /* Site Wrap for ABOUT page, (removes the featured_main, adds the image) */
 .about #site_wrap {
-   background-color: #000000;
-   height: 100vh;
-   width: 100vw;
-   overflow-x: hidden;
-   display: grid;
-   grid-template-columns:
-      1fr repeat(4, minmax(0, 264.75px)) 1fr;
-   grid-gap: 0px;
-   grid-template-rows:
-      117px 100px 447px 1fr;
 
    grid-template-areas:
       ". header featured_main featured_main logo ."
@@ -162,13 +146,13 @@ p a:link {
    justify-content: center;
    flex-direction: column; 
    text-align: center;
+   align-items: center;
 }
 
 /* ABOUT Page, (image size and centers img) */
 img {
    width: 236px;
    height: 314px;
-   margin: 10px;
 }
 
 /* ABOUT Page, (changes the margin to fit the image better) */
@@ -182,7 +166,7 @@ img {
    .about #site_wrap {
 
       grid-template-rows:
-         120px 150px 360px auto 1fr;
+         120px 150px auto auto 1fr;
 
       grid-template-areas:
          "header featured_main featured_main featured_main  featured_main logo"
@@ -198,24 +182,16 @@ img {
    grid-area: github;
    display: flex;
    flex-direction: column;
+   align-items: center;
 }
 
 /* CONTACT Page, (Justifies the content to the start of the flex-box) */
 .contact .featured_profile {
    justify-content: start;
+   text-align: center;
 }
 
 .contact #site_wrap {
-   background-color: #000000;
-   height: 100vh;
-   width: 100vw;
-   overflow-x: hidden;
-   display: grid;
-   grid-template-columns:
-      1fr repeat(4, minmax(0, 264.75px)) 1fr;
-   grid-gap: 0px;
-   grid-template-rows:
-      117px 100px auto 1fr;
 
    grid-template-areas:
       ". header featured_main featured_main logo ."
@@ -229,7 +205,7 @@ img {
    .contact #site_wrap {
 
       grid-template-rows:
-         120px 150px 200px auto 1fr;
+         120px 150px auto auto 1fr;
 
       grid-template-areas:
          "header featured_main featured_main featured_main  featured_main logo"
@@ -255,14 +231,7 @@ img {
 }
 
 .hobbies #site_wrap {
-   background-color: #000000;
-   height: 100vh;
-   width: 100vw;
-   overflow-x: hidden;
-   display: grid;
-   grid-template-columns:
-      1fr repeat(4, minmax(0, 264.75px)) 1fr;
-   grid-gap: 0px;
+
    grid-template-rows:
       117px 100px auto 1fr;
 
@@ -278,7 +247,7 @@ img {
    .hobbies #site_wrap {
 
       grid-template-rows:
-         120px 150px 200px auto 1fr;
+         120px 150px auto auto 1fr;
 
       grid-template-areas:
          "header featured_main featured_main featured_main  featured_main logo"
@@ -292,17 +261,6 @@ img {
 
 /* index page */
 .index #site_wrap {
-   background-color: #000000;
-   height: 100vh;
-   width: 100vw;
-   overflow-x: hidden;
-   display: grid;
-   grid-template-columns:
-      1fr repeat(4, minmax(0, 264.75px)) 1fr;
-   grid-gap: 0px;
-   grid-template-rows:
-      117px 100px auto 1fr;
-
    grid-template-areas:
       ". header header header logo ."
       ". . featured_header featured_header . ."
@@ -316,7 +274,7 @@ img {
    .index #site_wrap {
 
       grid-template-rows:
-         120px 150px 60px auto 1fr;
+         120px 150px auto 1fr;
 
       grid-template-areas:
          "header featured_main featured_main featured_main  featured_main logo"
@@ -343,20 +301,12 @@ img {
    grid-area: graphic_art;
    display: flex;
    justify-content: center;
+   flex-direction: column;
+
 }
 
 /* address the issue of graphic_art overflowing into the featured_main */
 .skills #site_wrap {
-   background-color: #000000;
-   height: 100vh;
-   width: 100vw;
-   overflow-x: hidden;
-   display: grid;
-   grid-template-columns:
-      1fr repeat(4, minmax(0, 264.75px)) 1fr;
-   grid-gap: 0px;
-   grid-template-rows:
-      117px 100px auto 1fr;
 
    grid-template-areas:
       ". header featured_main featured_main logo ."
@@ -371,7 +321,7 @@ img {
    .skills #site_wrap {
 
       grid-template-rows:
-         120px 150px 200px auto 1fr;
+         120px 150px auto auto 1fr;
 
       grid-template-areas:
          "header featured_main featured_main featured_main  featured_main logo"
